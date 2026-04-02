@@ -1,0 +1,19 @@
+{
+  "name": "nature-essence-amelie",
+  "version": "1.0.0",
+  "description": "Site web Amélie Naturessence - Naturopathe Normandie",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "sharp": "^0.34.5"
+  }
+}

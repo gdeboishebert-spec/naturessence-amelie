@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Naturopathie | Amélie Naturessence - Conseils Bien-être Naturel</title>
+    <meta name="description"
+        content="Découvrez chaque jour un nouveau conseil naturopathie : alimentation, plantes médicinales, drainage lymphatique, gestion du stress. Blog bien-être par Amélie Naturessence, naturopathe en Normandie.">
+    <meta name="keywords"
+        content="blog naturopathie, conseils bien-être naturel, plantes médicinales, alimentation saine, drainage lymphatique, naturopathe normandie, santé naturelle">
+    <meta name="author" content="Amélie Naturessence">
+    <link rel="canonical" href="https://naturessence-amelie.com/blog.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="blog">
+    <meta property="og:url" content="https://naturessence-amelie.com/blog.html">
+    <meta property="og:title" content="Blog Naturopathie | Amélie Naturessence">
+    <meta property="og:description" content="Conseils quotidiens en naturopathie, bien-être et santé naturelle par Amélie Naturessence.">
+    <meta property="og:image" content="https://naturessence-amelie.com/assets/images/service_naturo.webp">
+
+    <!-- Schema.org Blog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog Naturopathie - Amélie Naturessence",
+        "description": "Conseils quotidiens en naturopathie, bien-être et santé naturelle",
+        "url": "https://naturessence-amelie.com/blog.html",
+        "author": {
+            "@type": "Person",
+            "name": "Amélie de Boishebert",
+            "jobTitle": "Naturopathe"
+        },
+        "publisher": {
+            "@type": "HealthAndBeautyBusiness",
+            "name": "Amélie Naturessence",
+            "url": "https://naturessence-amelie.com"
+        }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=League+Script&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Blog-specific styles */
+        .blog-hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background-color: var(--color-bg-soft);
+        }
+
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-hero .script-font {
+            margin-bottom: 1rem;
+        }
+
+        .blog-hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2.5rem;
+            padding: var(--spacing-md) 0;
+        }
+
+        .blog-card {
+            background: white;
+            border: 1px solid #f0f0f0;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .blog-card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .blog-card-body {
+            padding: 2rem;
+        }
+
+        .blog-card-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .blog-card-body h2 {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .blog-card-body p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-card-date {
+            font-size: 0.8rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+        }
+
+        .blog-back {
+            display: inline-block;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: var(--color-accent);
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .blog-back:hover {
+            color: var(--color-primary);
+        }
+
+        .blog-nav {
+            background: white;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .blog-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .blog-filter {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.2rem;
+            border: 1px solid var(--color-primary);
+            background: transparent;
+            color: var(--color-primary);
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 30px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="blog-nav">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="logo">Naturopathie <span class="highlight">&</span> Bien-être</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="blog.html" style="color: var(--color-accent);">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Menu de navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="blog-hero">
+            <div class="container">
+                <span class="script-font">Le Journal</span>
+                <h1>BIEN-ETRE AU NATUREL</h1>
+                <p>Tous les 3 jours, un nouveau conseil pour prendre soin de vous naturellement. Alimentation, plantes, gestion du stress et bien plus.</p>
+            </div>
+        </section>
+
+        <!-- Filters -->
+        <section style="padding: 2rem 0 0;">
+            <div class="container" style="text-align: center;">
+                <div class="blog-filter">
+                    <button class="filter-btn active" data-filter="all">Tous</button>
+                    <button class="filter-btn" data-filter="alimentation">Alimentation</button>
+                    <button class="filter-btn" data-filter="plantes">Plantes</button>
+                    <button class="filter-btn" data-filter="drainage">Drainage</button>
+                    <button class="filter-btn" data-filter="stress">Gestion du stress</button>
+                    <button class="filter-btn" data-filter="saisonnier">Saisonnier</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section>
+            <div class="container">
+                <div class="blog-grid" id="blog-grid">
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/le-bilan-de-vitalite-chez-amelie-naturessence-a-quoi-s-attendre.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1610449880088-9f0f6c7a19e6?w=800&auto=format&fit=crop&q=80" alt="Le bilan de vitalité chez Amélie Naturessence : à quoi s'attendre" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Le bilan de vitalité chez Amélie Naturessence : à quoi s'attendre</h2>
+                                <p>Le bilan de vitalité est la première étape chez Amélie Naturessence à Bertreville Saint Ouen. Iridologie, morphotypologie et bilan alimentaire : 1h15 pour dresser le portrait complet de votre terrain et définir un accompagnement personnalisé.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/solstice-d-hiver-nourrir-son-energie-interieure.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=800&auto=format&fit=crop&q=80" alt="Solstice d'hiver : nourrir son énergie intérieure" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Solstice d'hiver : nourrir son énergie intérieure</h2>
+                                <p>Le jour le plus court invite au repos profond. Amélie Naturessence propose des cures hivernales adaptées à cette période de minimum solaire en Normandie.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/l-auto-massage-pour-relacher-les-tensions-du-cou.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=800&auto=format&fit=crop&q=80" alt="L'auto-massage pour relâcher les tensions du cou" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>L'auto-massage pour relâcher les tensions du cou</h2>
+                                <p>Trapèzes noués, cervicales bloquées : 3 mouvements d'auto-massage en 5 minutes. Amélie Naturessence enseigne ces gestes simples pour compléter les séances au cabinet.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/alimentation-et-peau-ce-que-revele-votre-visage.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&auto=format&fit=crop&q=80" alt="Alimentation et peau : ce que révèle votre visage" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Alimentation et peau : ce que révèle votre visage</h2>
+                                <p>Le face mapping relie chaque zone du visage à un organe. Amélie Naturessence utilise cette lecture lors de ses bilans de vitalité pour adapter l'alimentation de ses clients.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/thym-et-romarin-les-herbes-medicinales-de-votre-jardin-normand.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1550159930-40066082a4fc?w=800&auto=format&fit=crop&q=80" alt="Thym et romarin : les herbes médicinales de votre jardin normand" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Thym et romarin : les herbes médicinales de votre jardin normand</h2>
+                                <p>Le thym est antiseptique, le romarin stimule le foie et la mémoire. Deux plantes qui poussent dans tout jardin normand qu'Amélie Naturessence recommande au quotidien.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/le-drainage-complet-du-corps-protocole-90-minutes.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80" alt="Le drainage complet du corps : protocole 90 minutes" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Le drainage complet du corps : protocole 90 minutes</h2>
+                                <p>Un drainage intégral de 90 minutes pour une remise à zéro complète du système lymphatique. Amélie Naturessence propose ce soin premium à son cabinet de Bertreville Saint Ouen.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/equinoxe-d-automne-ralentir-et-se-recentrer.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1491904768633-2b7e3e7fede5?w=800&auto=format&fit=crop&q=80" alt="Équinoxe d'automne : ralentir et se recentrer" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Équinoxe d'automne : ralentir et se recentrer</h2>
+                                <p>L'automne invite au repli intérieur. Amélie Naturessence adapte ses protocoles à cette énergie descendante pour accompagner ses clients en douceur au cabinet de Bertreville.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/ho-oponopono-la-priere-hawaienne-de-guerison.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22?w=800&auto=format&fit=crop&q=80" alt="Ho'oponopono : la prière hawaïenne de guérison" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Ho'oponopono : la prière hawaïenne de guérison</h2>
+                                <p>Désolé, pardon, merci, je t'aime : ces 4 mots libèrent les mémoires émotionnelles. Amélie Naturessence propose cette pratique dans ses accompagnements holistiques du stress.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/les-lentilles-l-aliment-parfait-selon-la-naturopathie.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&auto=format&fit=crop&q=80" alt="Les lentilles : l'aliment parfait selon la naturopathie" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Les lentilles : l'aliment parfait selon la naturopathie</h2>
+                                <p>Riches en protéines, fer et fibres : les lentilles sont l'aliment naturo par excellence. Amélie Naturessence les intègre dans tous ses plans alimentaires au cabinet de Bertreville.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/curcuma-gingembre-poivre-le-trio-anti-douleur.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80" alt="Curcuma, gingembre, poivre : le trio anti-douleur" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Curcuma, gingembre, poivre : le trio anti-douleur</h2>
+                                <p>Ensemble, ces trois épices créent une synergie anti-inflammatoire puissante. Amélie Naturessence les prescrit en golden milk ou gélules dans ses protocoles anti-douleur.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/drainage-et-acne-agir-sur-la-cause-profonde.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1583416750470-965b2707b355?w=800&auto=format&fit=crop&q=80" alt="Drainage et acné : agir sur la cause profonde" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Drainage et acné : agir sur la cause profonde</h2>
+                                <p>L'acné résulte souvent d'une surcharge toxinique. Amélie Naturessence associe drainage lymphatique facial et détox hépatique pour traiter le problème à la racine.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/janvier-les-bonnes-resolutions-naturo-qui-tiennent.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=80" alt="Janvier : les bonnes résolutions naturo qui tiennent" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Janvier : les bonnes résolutions naturo qui tiennent</h2>
+                                <p>Un micro-changement par mois plutôt que des résolutions impossibles. Amélie Naturessence accompagne ses clients dans cette approche progressive au cabinet de Bertreville.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/la-technique-wim-hof-le-froid-au-service-de-la-sante.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&auto=format&fit=crop&q=80" alt="La technique Wim Hof : le froid au service de la santé" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>La technique Wim Hof : le froid au service de la santé</h2>
+                                <p>Douche froide progressive et respiration spécifique : Amélie Naturessence guide ses clients dans l'intégration progressive du froid pour renforcer l'immunité et l'énergie.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/batch-cooking-naturo-manger-sain-toute-la-semaine.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80" alt="Batch cooking naturo : manger sain toute la semaine" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Batch cooking naturo : manger sain toute la semaine</h2>
+                                <p>Quinoa, lentilles, légumes rôtis, houmous : préparez 5 bases le dimanche. Amélie Naturessence fournit des plans de batch cooking personnalisés à ses clients.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/millepertuis-le-soleil-en-gelule.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1591084728795-1149f32d9866?w=800&auto=format&fit=crop&q=80" alt="Millepertuis : le soleil en gélule" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Millepertuis : le soleil en gélule</h2>
+                                <p>Efficace pour la dépression modérée, le millepertuis est la plante de la lumière intérieure. Amélie Naturessence le recommande avec prudence en vérifiant les interactions médicamenteuses.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/le-drainage-renata-franca-la-methode-bresilienne.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&auto=format&fit=crop&q=80" alt="Le drainage Renata França : la méthode brésilienne" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Le drainage Renata França : la méthode brésilienne</h2>
+                                <p>Cette méthode de drainage rapide promet des résultats visibles dès la première séance. Amélie Naturessence propose différentes techniques de drainage adaptées à chaque besoin.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/canicule-en-normandie-s-hydrater-et-se-proteger.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&auto=format&fit=crop&q=80" alt="Canicule en Normandie : s'hydrater et se protéger" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Canicule en Normandie : s'hydrater et se protéger</h2>
+                                <p>Eau de coco, pastèque, concombre, hydrolat de menthe : Amélie Naturessence partage ses astuces naturo pour traverser les épisodes de chaleur estivale en Normandie.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/digital-detox-liberer-son-cerveau-des-ecrans.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=800&auto=format&fit=crop&q=80" alt="Digital détox : libérer son cerveau des écrans" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Digital détox : libérer son cerveau des écrans</h2>
+                                <p>La lumière bleue perturbe la mélatonine, les notifications épuisent le système nerveux. Amélie Naturessence intègre la digital détox dans ses protocoles de gestion du stress.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/les-aliments-fermentes-maison-recettes-faciles.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=800&auto=format&fit=crop&q=80" alt="Les aliments fermentés maison : recettes faciles" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Les aliments fermentés maison : recettes faciles</h2>
+                                <p>Kéfir, kombucha, légumes lacto-fermentés : 4 recettes pour enrichir votre flore intestinale. Amélie Naturessence partage ces recettes pratiques lors des consultations au cabinet.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/aubepine-la-plante-du-coeur-et-de-l-anxiete.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=80" alt="Aubépine : la plante du coeur et de l'anxiété" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Aubépine : la plante du coeur et de l'anxiété</h2>
+                                <p>L'aubépine régule le rythme cardiaque et calme les palpitations. Amélie Naturessence la prescrit dans ses accompagnements de gestion du stress et de l'anxiété.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/le-drainage-en-cure-combien-de-seances-pour-des-resultats.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&auto=format&fit=crop&q=80" alt="Le drainage en cure : combien de séances pour des résultats" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Le drainage en cure : combien de séances pour des résultats</h2>
+                                <p>Une cure de 5 à 10 séances produit des résultats durables. Amélie Naturessence propose des forfaits drainage adaptés à chaque objectif à son cabinet de Bertreville Saint Ouen.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/equinoxe-de-printemps-renouveau-et-grand-nettoyage.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&auto=format&fit=crop&q=80" alt="Équinoxe de printemps : renouveau et grand nettoyage" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Équinoxe de printemps : renouveau et grand nettoyage</h2>
+                                <p>Cure de sève de bouleau, reprise du sport en extérieur : Amélie Naturessence propose des programmes de revitalisation printanière à son cabinet en Normandie.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/creer-un-rituel-du-matin-en-15-minutes.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800&auto=format&fit=crop&q=80" alt="Créer un rituel du matin en 15 minutes" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Créer un rituel du matin en 15 minutes</h2>
+                                <p>Eau citronnée, respiration, étirements et journal : un rituel simple. Amélie Naturessence aide chaque client à construire sa routine matinale idéale lors des consultations.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/index-glycemique-comprendre-pour-mieux-manger.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&auto=format&fit=crop&q=80" alt="Index glycémique : comprendre pour mieux manger" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Index glycémique : comprendre pour mieux manger</h2>
+                                <p>Un index glycémique élevé provoque fatigue et fringales. Amélie Naturessence enseigne la lecture de l'IG alimentaire pour stabiliser l'énergie au quotidien.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/spiruline-l-algue-aux-100-bienfaits.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=800&auto=format&fit=crop&q=80" alt="Spiruline : l'algue aux 100 bienfaits" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Spiruline : l'algue aux 100 bienfaits</h2>
+                                <p>Protéines complètes, fer, bêta-carotène : la spiruline est l'aliment le plus complet du règne végétal. Amélie Naturessence la recommande aux sportifs et végétariens de la région.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/drainage-post-partum-retrouver-son-corps-en-douceur.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1574447585363-4c1e037060bb?w=800&auto=format&fit=crop&q=80" alt="Drainage post-partum : retrouver son corps en douceur" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Drainage post-partum : retrouver son corps en douceur</h2>
+                                <p>Après l'accouchement, le drainage lymphatique aide à éliminer la rétention. Amélie Naturessence accompagne les jeunes mamans au cabinet de Bertreville Saint Ouen.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/fetes-de-fin-d-annee-gerer-les-exces-sans-culpabilite.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80" alt="Fêtes de fin d'année : gérer les excès sans culpabilité" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Fêtes de fin d'année : gérer les excès sans culpabilité</h2>
+                                <p>Chardon-marie avant les fêtes, tisane digestive après : Amélie Naturessence propose des protocoles pour profiter des repas festifs et récupérer rapidement.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/le-pouvoir-de-la-sieste-20-minutes-qui-rechargent.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=800&auto=format&fit=crop&q=80" alt="Le pouvoir de la sieste : 20 minutes qui rechargent" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Le pouvoir de la sieste : 20 minutes qui rechargent</h2>
+                                <p>Une sieste de 20 minutes améliore la vigilance de 100%. Amélie Naturessence aide ses clients à optimiser leur rythme de vie pour retrouver une énergie durable.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/collagene-et-alimentation-garder-une-peau-jeune.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80" alt="Collagène et alimentation : garder une peau jeune" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Collagène et alimentation : garder une peau jeune</h2>
+                                <p>Bouillon d'os, vitamine C, silicium et zinc stimulent la production de collagène. Amélie Naturessence propose des protocoles anti-âge naturels lors de ses consultations à Bertreville.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/propolis-l-antibiotique-de-la-ruche.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1466853817435-05b43fe3aec2?w=800&auto=format&fit=crop&q=80" alt="Propolis : l'antibiotique de la ruche" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Propolis : l'antibiotique de la ruche</h2>
+                                <p>La propolis est un anti-infectieux naturel puissant pour les maux de gorge et infections ORL. Amélie Naturessence recommande la propolis normande, riche en principes actifs locaux.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/drainage-et-endometriose-un-soulagement-possible.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=800&auto=format&fit=crop&q=80" alt="Drainage et endométriose : un soulagement possible" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Drainage et endométriose : un soulagement possible</h2>
+                                <p>Le drainage lymphatique abdominal peut réduire l'inflammation pelvienne. Amélie Naturessence, forte de son expérience infirmière, accompagne les femmes souffrant d'endométriose.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/ete-proteger-sa-peau-du-soleil-naturellement.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80" alt="Été : protéger sa peau du soleil naturellement" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Été : protéger sa peau du soleil naturellement</h2>
+                                <p>Huile de carotte, astaxanthine, lycopène : Amélie Naturessence prépare la peau de ses clients au soleil estival normand avec une approche nutritionnelle dès le printemps.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/nature-et-sante-mentale-les-preuves-scientifiques.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?w=800&auto=format&fit=crop&q=80" alt="Nature et santé mentale : les preuves scientifiques" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Nature et santé mentale : les preuves scientifiques</h2>
+                                <p>20 minutes en nature suffisent pour baisser le cortisol de 21%. La Normandie offre mer, forêts et campagne : Amélie Naturessence prescrit la nature comme véritable médicament.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/les-bonnes-graisses-arretons-de-les-diaboliser.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&auto=format&fit=crop&q=80" alt="Les bonnes graisses : arrêtons de les diaboliser" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Les bonnes graisses : arrêtons de les diaboliser</h2>
+                                <p>Avocat, huile d'olive, noix : les bonnes graisses sont essentielles. Amélie Naturessence déconstruit les idées reçues sur le gras lors de ses consultations de rééquilibrage alimentaire.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/le-ginkgo-biloba-l-arbre-de-la-memoire.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&auto=format&fit=crop&q=80" alt="Le ginkgo biloba : l'arbre de la mémoire" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Le ginkgo biloba : l'arbre de la mémoire</h2>
+                                <p>Le ginkgo améliore la microcirculation cérébrale et la mémoire. Amélie Naturessence le recommande aux étudiants et seniors lors de ses consultations de naturopathie.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/drainage-et-voyage-en-avion-prevenir-les-jambes-gonflees.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&auto=format&fit=crop&q=80" alt="Drainage et voyage en avion : prévenir les jambes gonflées" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Drainage et voyage en avion : prévenir les jambes gonflées</h2>
+                                <p>L'immobilité en avion favorise la stagnation lymphatique. Amélie Naturessence recommande un drainage avant et après le vol pour les grands voyageurs de la région de Dieppe.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/printemps-cures-de-jus-frais-et-revitalisation.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&auto=format&fit=crop&q=80" alt="Printemps : cures de jus frais et revitalisation" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Printemps : cures de jus frais et revitalisation</h2>
+                                <p>Jus de carotte-betterave-gingembre, céleri-pomme-citron : Amélie Naturessence propose des cures de jus printanières pour réveiller l'organisme après l'hiver normand.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/le-hiit-vs-la-marche-quel-exercice-pour-votre-sante.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&auto=format&fit=crop&q=80" alt="Le HIIT vs la marche : quel exercice pour votre santé" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Le HIIT vs la marche : quel exercice pour votre santé</h2>
+                                <p>30 minutes de marche quotidienne sur les falaises normandes apportent souvent plus de bénéfices que des séances intensives. Amélie Naturessence adapte ses conseils d'activité physique à chaque profil.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/alimentation-et-humeur-le-lien-prouve-par-la-science.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=800&auto=format&fit=crop&q=80" alt="Alimentation et humeur : le lien prouvé par la science" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Alimentation et humeur : le lien prouvé par la science</h2>
+                                <p>Le régime méditerranéen réduit le risque de dépression de 33%. Amélie Naturessence adapte cette approche avec les produits locaux normands dans ses rééquilibrages alimentaires.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/valeriane-et-houblon-le-somnifere-naturel.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1606914469633-bd53b1b27f85?w=800&auto=format&fit=crop&q=80" alt="Valériane et houblon : le somnifère naturel" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Valériane et houblon : le somnifère naturel</h2>
+                                <p>L'association valériane-houblon est aussi efficace qu'un somnifère classique. Amélie, naturopathe à Bertreville près de Dieppe, la privilégie pour un sommeil sans accoutumance.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/le-fascia-ce-tissu-meconnu-qui-influence-votre-sante.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1591343395902-1adcb454c4e2?w=800&auto=format&fit=crop&q=80" alt="Le fascia : ce tissu méconnu qui influence votre santé" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Le fascia : ce tissu méconnu qui influence votre santé</h2>
+                                <p>Le fascia enveloppe tous nos organes. Quand il se rigidifie, il crée douleurs et mauvaise circulation. Le drainage proposé par Amélie Naturessence aide à maintenir sa souplesse.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/hiver-normand-les-remedes-de-grand-mere-qui-marchent.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&auto=format&fit=crop&q=80" alt="Hiver normand : les remèdes de grand-mère qui marchent" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Hiver normand : les remèdes de grand-mère qui marchent</h2>
+                                <p>Grog au miel-citron-thym, inhalation d'eucalyptus : certains remèdes ancestraux sont validés par la science. Amélie Naturessence les intègre dans ses protocoles hivernaux.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/technique-de-la-visualisation-positive.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=80" alt="Technique de la visualisation positive" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Technique de la visualisation positive</h2>
+                                <p>Se projeter mentalement dans une situation positive active les mêmes zones cérébrales. Amélie Naturessence utilise cette technique lors de ses accompagnements de gestion du stress.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/le-gluten-faut-il-vraiment-l-eviter.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800&auto=format&fit=crop&q=80" alt="Le gluten : faut-il vraiment l'éviter ?" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Le gluten : faut-il vraiment l'éviter ?</h2>
+                                <p>Maladie coeliaque, sensibilité ou effet de mode : Amélie Naturessence fait le point lors de ses consultations à Bertreville et propose des alternatives adaptées à chaque situation.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/echinacee-le-bouclier-immunitaire-naturel.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop&q=80" alt="Échinacée : le bouclier immunitaire naturel" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Échinacée : le bouclier immunitaire naturel</h2>
+                                <p>Prise dès les premiers signes de refroidissement, l'échinacée réduit la durée des infections. Amélie Naturessence la prescrit en cure préventive pour affronter l'hiver normand.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/auto-drainage-du-soir-5-gestes-avant-de-dormir.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&auto=format&fit=crop&q=80" alt="Auto-drainage du soir : 5 gestes avant de dormir" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Auto-drainage du soir : 5 gestes avant de dormir</h2>
+                                <p>Mouvements circulaires doux sur le ventre, les aisselles et le cou. Amélie Naturessence enseigne ces gestes d'auto-drainage pour prolonger les bienfaits entre les séances au cabinet.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/automne-en-normandie-les-cueillettes-sauvages-autour-de-dieppe.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80" alt="Automne en Normandie : les cueillettes sauvages autour de Dieppe" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Automne en Normandie : les cueillettes sauvages autour de Dieppe</h2>
+                                <p>Mûres, châtaignes, noisettes, champignons : la Normandie offre une abondance de trésors sauvages. Amélie Naturessence encourage ses clients à se reconnecter à la nature locale.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/le-body-scan-la-relaxation-profonde-en-10-minutes.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=800&auto=format&fit=crop&q=80" alt="Le body scan : la relaxation profonde en 10 minutes" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Le body scan : la relaxation profonde en 10 minutes</h2>
+                                <p>Cette méditation parcourt chaque partie du corps pour relâcher les tensions. Amélie Naturessence intègre cette technique dans ses accompagnements bien-être au cabinet près de Dieppe.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/meal-prep-organiser-ses-repas-sains-pour-la-semaine.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1591189863430-ab87e120f312?w=800&auto=format&fit=crop&q=80" alt="Meal prep : organiser ses repas sains pour la semaine" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Meal prep : organiser ses repas sains pour la semaine</h2>
+                                <p>Préparer ses repas le dimanche évite la malbouffe. Amélie Naturessence fournit des plans de menus hebdomadaires personnalisés à ses clients lors des suivis nutritionnels.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/chardon-marie-le-gardien-du-foie.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1594719252039-05c1e7d0e1b1?w=800&auto=format&fit=crop&q=80" alt="Chardon-marie : le gardien du foie" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Chardon-marie : le gardien du foie</h2>
+                                <p>La silymarine protège et régénère les cellules hépatiques. Amélie Naturessence prescrit le chardon-marie dans ses cures détox saisonnières à Bertreville Saint Ouen.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/drainage-et-menopause-soulager-les-symptomes.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80" alt="Drainage et ménopause : soulager les symptômes" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Drainage et ménopause : soulager les symptômes</h2>
+                                <p>Rétention d'eau, jambes lourdes : la ménopause bouleverse le système lymphatique. Amélie Naturessence accompagne les femmes en péri-ménopause avec drainage et plantes phytoestrogènes.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/l-eau-combien-quand-et-laquelle-boire.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1490567674421-6d3b00e4ae08?w=800&auto=format&fit=crop&q=80" alt="L'eau : combien, quand et laquelle boire" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>L'eau : combien, quand et laquelle boire</h2>
+                                <p>1,5L par jour ne convient pas à tout le monde. Amélie Naturessence calcule le besoin hydrique personnalisé de chaque client lors du bilan de vitalité au cabinet.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/rentree-booster-la-concentration-des-enfants.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=800&auto=format&fit=crop&q=80" alt="Rentrée : booster la concentration des enfants" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Rentrée : booster la concentration des enfants</h2>
+                                <p>Oméga-3, petit-déjeuner protéiné, sommeil suffisant : Amélie Naturessence accompagne aussi les enfants au cabinet de Bertreville avec des stratégies naturelles adaptées.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/sophrologie-et-naturopathie-duo-gagnant.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1519421979051-c5278f91a82a?w=800&auto=format&fit=crop&q=80" alt="Sophrologie et naturopathie : duo gagnant" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Sophrologie et naturopathie : duo gagnant</h2>
+                                <p>La sophrologie agit sur le mental, la naturopathie sur le terrain physique. Amélie Naturessence travaille en réseau avec des sophrologues autour de Dieppe pour une prise en charge complète.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/les-proteines-vegetales-combinaisons-gagnantes.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=800&auto=format&fit=crop&q=80" alt="Les protéines végétales : combinaisons gagnantes" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Les protéines végétales : combinaisons gagnantes</h2>
+                                <p>Lentilles + riz, pois chiches + semoule : les bonnes associations pour tous les acides aminés. Amélie Naturessence accompagne aussi les végétariens dans leur équilibre nutritionnel.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/desmodium-le-protecteur-du-foie.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1599940778173-e276d4acb2bb?w=800&auto=format&fit=crop&q=80" alt="Desmodium : le protecteur du foie" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Desmodium : le protecteur du foie</h2>
+                                <p>Plante indispensable lors des cures détox. Amélie Naturessence prescrit le desmodium dans ses protocoles hépatiques, en complément du drainage lymphatique et du rééquilibrage alimentaire.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/drainage-et-sport-optimiser-la-recuperation.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop&q=80" alt="Drainage et sport : optimiser la récupération" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Drainage et sport : optimiser la récupération</h2>
+                                <p>Après un effort intense, le drainage accélère la récupération musculaire. Les sportifs de la région de Dieppe viennent chez Amélie Naturessence pour optimiser leur performance.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/les-algues-des-super-aliments-de-la-cote-normande.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1443890923422-7819ed4101c0?w=800&auto=format&fit=crop&q=80" alt="Les algues : des super-aliments de la côte normande" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Les algues : des super-aliments de la côte normande</h2>
+                                <p>Dulse, wakamé : les algues de nos côtes normandes près de Dieppe sont parmi les aliments les plus nutritifs au monde. Amélie Naturessence valorise ces trésors locaux dans ses conseils.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/respiration-au-carre-la-technique-anti-stress-express.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=800&auto=format&fit=crop&q=80" alt="Respiration au carré : la technique anti-stress express" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Respiration au carré : la technique anti-stress express</h2>
+                                <p>Inspirer 4s, retenir 4s, expirer 4s, retenir 4s : cette technique calme le système nerveux en 2 minutes. Amélie l'enseigne à ses clients au cabinet de Bertreville Saint Ouen.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/intolerances-alimentaires-comment-les-identifier.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1559181567-c3190220d975?w=800&auto=format&fit=crop&q=80" alt="Intolérances alimentaires : comment les identifier" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Intolérances alimentaires : comment les identifier</h2>
+                                <p>Ballonnements, migraines, fatigue après les repas : Amélie Naturessence utilise l'éviction rotative lors de ses bilans de vitalité pour identifier les intolérances sans tests coûteux.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/ortie-la-plante-remineralisante-de-nos-campagnes-normandes.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab12?w=800&auto=format&fit=crop&q=80" alt="Ortie : la plante reminéralisante de nos campagnes normandes" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Ortie : la plante reminéralisante de nos campagnes normandes</h2>
+                                <p>L'ortie est l'un des végétaux les plus riches en fer et minéraux. Abondante en Normandie, Amélie Naturessence la recommande en soupe ou infusion pour une reminéralisation naturelle.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/pressotherapie-vs-drainage-manuel-comment-choisir.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?w=800&auto=format&fit=crop&q=80" alt="Pressothérapie vs drainage manuel : comment choisir" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Pressothérapie vs drainage manuel : comment choisir</h2>
+                                <p>La pressothérapie utilise des bottes gonflables, le drainage manuel s'adapte à chaque corps. Amélie Naturessence pratique le drainage manuel personnalisé, plus précis et plus doux.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/pourquoi-eviter-les-produits-laitiers-en-cas-d-inflammation.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=800&auto=format&fit=crop&q=80" alt="Pourquoi éviter les produits laitiers en cas d'inflammation" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Pourquoi éviter les produits laitiers en cas d'inflammation</h2>
+                                <p>La caséine peut entretenir l'inflammation chronique. Amélie Naturessence propose des alternatives (chèvre, brebis, laits végétaux) adaptées à chaque profil lors des consultations.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/solstice-d-ete-rituels-de-bien-etre-en-bord-de-mer-normand.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=800&auto=format&fit=crop&q=80" alt="Solstice d'été : rituels de bien-être en bord de mer normand" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Solstice d'été : rituels de bien-être en bord de mer normand</h2>
+                                <p>Le millepertuis se récolte au solstice, la lavande est à son apogée. Amélie Naturessence profite de la richesse botanique normande pour ses conseils en plantes médicinales de saison.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/le-journal-de-gratitude-5-minutes-pour-changer-de-perspective.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=800&auto=format&fit=crop&q=80" alt="Le journal de gratitude : 5 minutes pour changer de perspective" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Le journal de gratitude : 5 minutes pour changer de perspective</h2>
+                                <p>Écrire 3 choses positives chaque soir reprogramme le cerveau. Amélie Naturessence recommande cette pratique dans ses accompagnements de gestion du stress à Bertreville Saint Ouen.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/smoothie-vert-la-recette-parfaite-pour-demarrer-la-journee.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=800&auto=format&fit=crop&q=80" alt="Smoothie vert : la recette parfaite pour démarrer la journée" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Smoothie vert : la recette parfaite pour démarrer la journée</h2>
+                                <p>Épinard, banane, lait d'amande, chia et spiruline : un smoothie en 3 minutes. Amélie Naturessence partage ses recettes favorites lors des consultations de rééquilibrage alimentaire.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/griffonia-le-precurseur-naturel-de-la-serotonine.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800&auto=format&fit=crop&q=80" alt="Griffonia : le précurseur naturel de la sérotonine" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Griffonia : le précurseur naturel de la sérotonine</h2>
+                                <p>Le griffonia contient du 5-HTP qui se transforme en sérotonine. Amélie Naturessence l'utilise dans ses protocoles pour l'humeur, le sommeil et les compulsions sucrées.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/le-drainage-des-bras-apres-un-cancer-du-sein.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1610449880088-9f0f6c7a19e6?w=800&auto=format&fit=crop&q=80" alt="Le drainage des bras : après un cancer du sein" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Le drainage des bras : après un cancer du sein</h2>
+                                <p>Le lymphoedème touche 20% des femmes après un curage axillaire. Amélie Naturessence, ancienne infirmière en cancérologie, propose un drainage lymphatique spécialisé et bienveillant.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/systeme-immunitaire-les-gestes-quotidiens-en-normandie.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1491904768633-2b7e3e7fede5?w=800&auto=format&fit=crop&q=80" alt="Système immunitaire : les gestes quotidiens en Normandie" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Système immunitaire : les gestes quotidiens en Normandie</h2>
+                                <p>Douche froide, ail cru, probiotiques : les 5 habitudes quotidiennes pour renforcer l'immunité. Amélie Naturessence prépare ses clients normands avant chaque changement de saison.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/repas-du-soir-leger-pour-mieux-dormir.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=800&auto=format&fit=crop&q=80" alt="Repas du soir : léger pour mieux dormir" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Repas du soir : léger pour mieux dormir</h2>
+                                <p>Un dîner trop riche perturbe le sommeil. Soupe de légumes, poisson léger ou salade complète : Amélie Naturessence accompagne chaque client vers les bonnes habitudes alimentaires du soir.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/melisse-et-passiflore-le-duo-anti-anxiete.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?w=800&auto=format&fit=crop&q=80" alt="Mélisse et passiflore : le duo anti-anxiété" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Mélisse et passiflore : le duo anti-anxiété</h2>
+                                <p>La mélisse calme les tensions digestives, la passiflore apaise le mental. Ce duo est fréquemment recommandé par Amélie, naturopathe à Bertreville, dans ses protocoles anti-stress.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/les-bienfaits-insoupconnes-du-brossage-a-sec.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80" alt="Les bienfaits insoupçonnés du brossage à sec" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Les bienfaits insoupçonnés du brossage à sec</h2>
+                                <p>Brossez votre peau à sec avant la douche : cette technique active la lymphe et booste la circulation. Amélie Naturessence recommande ce geste quotidien entre les séances de drainage au cabinet.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/manger-en-pleine-conscience-redecouvrir-le-plaisir.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=800&auto=format&fit=crop&q=80" alt="Manger en pleine conscience : redécouvrir le plaisir" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Manger en pleine conscience : redécouvrir le plaisir</h2>
+                                <p>Manger devant un écran empêche le cerveau de percevoir la satiété. Amélie Naturessence enseigne la pleine conscience alimentaire comme pilier du rééquilibrage nutritionnel.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/l-importance-de-la-vitamine-d-en-normandie.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=80" alt="L'importance de la vitamine D en Normandie" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>L'importance de la vitamine D en Normandie</h2>
+                                <p>En Normandie, 80% de la population manque de vitamine D entre octobre et avril. Amélie Naturessence contrôle ce paramètre essentiel lors de chaque bilan de vitalité à Bertreville.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/burn-out-le-reconnaitre-et-s-en-sortir-naturellement.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22?w=800&auto=format&fit=crop&q=80" alt="Burn-out : le reconnaître et s'en sortir naturellement" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Burn-out : le reconnaître et s'en sortir naturellement</h2>
+                                <p>Épuisement physique, émotionnel et mental : le burn-out nécessite un accompagnement global. Amélie Naturessence propose un suivi personnalisé combinant micronutrition, plantes et hygiène de vie.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/les-10-commandements-d-une-digestion-parfaite.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&auto=format&fit=crop&q=80" alt="Les 10 commandements d'une digestion parfaite" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Les 10 commandements d'une digestion parfaite</h2>
+                                <p>Mastiquer 20 fois, manger au calme, respecter les associations alimentaires... Ces règles d'or sont transmises par Amélie Naturessence dès la première consultation de naturopathie.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/boswellia-l-encens-qui-soulage-les-articulations.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1540206395-68808572332f?w=800&auto=format&fit=crop&q=80" alt="Boswellia : l'encens qui soulage les articulations" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Boswellia : l'encens qui soulage les articulations</h2>
+                                <p>Le boswellia possède des propriétés anti-inflammatoires puissantes pour l'arthrose et les tendinites. Amélie Naturessence l'associe au curcuma dans ses protocoles articulaires.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/le-drainage-lymphatique-pendant-la-grossesse.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1583416750470-965b2707b355?w=800&auto=format&fit=crop&q=80" alt="Le drainage lymphatique pendant la grossesse" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Le drainage lymphatique pendant la grossesse</h2>
+                                <p>Jambes gonflées, rétention d'eau : le drainage adapté soulage ces désagréments. Amélie Naturessence accueille les femmes enceintes à partir du 2ème trimestre dans son cabinet de Bertreville.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/se-preparer-a-l-ete-en-normandie-conseils-naturo-pour-une-belle-peau.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&auto=format&fit=crop&q=80" alt="Se préparer à l'été en Normandie : conseils naturo pour une belle peau" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Se préparer à l'été en Normandie : conseils naturo pour une belle peau</h2>
+                                <p>Bêta-carotène, hydratation et protection solaire naturelle : Amélie Naturessence propose des protocoles de préparation estivale 6 semaines avant l'été pour profiter du soleil normand.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/equilibre-acido-basique-la-cle-de-la-vitalite.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=800&auto=format&fit=crop&q=80" alt="Equilibre acido-basique : la clé de la vitalité" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Equilibre acido-basique : la clé de la vitalité</h2>
+                                <p>Un terrain trop acide favorise inflammation et fatigue. L'équilibre acido-basique est l'un des premiers points vérifiés par Amélie Naturessence lors du bilan de vitalité au cabinet.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/ashwagandha-le-secret-ayurvedique-anti-stress.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1550159930-40066082a4fc?w=800&auto=format&fit=crop&q=80" alt="Ashwagandha : le secret ayurvédique anti-stress" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Ashwagandha : le secret ayurvédique anti-stress</h2>
+                                <p>Cette plante adaptogène abaisse le cortisol de 30% en 60 jours. Amélie, naturopathe à Bertreville près de Dieppe, la prescrit dans ses protocoles de gestion du stress et de fatigue chronique.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/le-gua-sha-le-drainage-du-visage-a-domicile.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&auto=format&fit=crop&q=80" alt="Le gua sha : le drainage du visage à domicile" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Le gua sha : le drainage du visage à domicile</h2>
+                                <p>Cet outil en jade permet un auto-drainage du visage entre les séances. Amélie Naturessence enseigne la technique à ses clientes au cabinet de Bertreville pour prolonger les bienfaits du drainage professionnel.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/pourquoi-manger-des-legumes-fermentes-chaque-jour.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=800&auto=format&fit=crop&q=80" alt="Pourquoi manger des légumes fermentés chaque jour" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Pourquoi manger des légumes fermentés chaque jour</h2>
+                                <p>Choucroute crue, kimchi, kéfir : les aliments lacto-fermentés nourrissent le microbiote. Amélie Naturessence les recommande systématiquement dans ses programmes de rééquilibrage alimentaire.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/allergie-au-pollen-les-solutions-naturelles.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&auto=format&fit=crop&q=80" alt="Allergie au pollen : les solutions naturelles" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Allergie au pollen : les solutions naturelles</h2>
+                                <p>Quercétine, ortie, probiotiques : le protocole naturo pour passer le printemps normand sans antihistaminiques. Amélie Naturessence prépare ses clients dès février pour la saison pollinique.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/l-eft-tapoter-pour-se-liberer-du-stress.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&auto=format&fit=crop&q=80" alt="L'EFT : tapoter pour se libérer du stress" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>L'EFT : tapoter pour se libérer du stress</h2>
+                                <p>Cette technique de libération émotionnelle réduit l'anxiété en quelques minutes. Amélie Naturessence propose cette approche en complément de ses consultations de naturopathie à Bertreville Saint Ouen.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/sucre-comprendre-et-vaincre-l-addiction.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1498579397066-22750a3cb424?w=800&auto=format&fit=crop&q=80" alt="Sucre : comprendre et vaincre l'addiction" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Sucre : comprendre et vaincre l'addiction</h2>
+                                <p>Le sucre active les mêmes circuits cérébraux que les drogues dures. Au cabinet Amélie Naturessence, le sevrage sucré est accompagné avec chrome, cannelle et un rééquilibrage alimentaire progressif.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/la-rhodiola-la-plante-des-vikings-contre-la-fatigue.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80" alt="La rhodiola : la plante des Vikings contre la fatigue" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>La rhodiola : la plante des Vikings contre la fatigue</h2>
+                                <p>La rhodiola améliore la résistance au stress et combat la fatigue chronique. C'est l'une des plantes adaptogènes préférées d'Amélie, naturopathe en Normandie, pour les personnes surmenées.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/drainage-post-operatoire-accelerer-la-recuperation.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&auto=format&fit=crop&q=80" alt="Drainage post-opératoire : accélérer la récupération" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Drainage post-opératoire : accélérer la récupération</h2>
+                                <p>Après une chirurgie, le drainage lymphatique réduit les oedèmes et accélère la cicatrisation. Amélie Naturessence propose des séances de drainage post-opératoire à son cabinet de Bertreville, près de Dieppe.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/le-curcuma-l-epice-anti-inflammatoire-par-excellence.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1607532941433-304659e8198a?w=800&auto=format&fit=crop&q=80" alt="Le curcuma : l'épice anti-inflammatoire par excellence" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Le curcuma : l'épice anti-inflammatoire par excellence</h2>
+                                <p>Associé au poivre noir et à un corps gras, le curcuma décuple ses bienfaits. Amélie Naturessence intègre cette épice dans de nombreux protocoles anti-douleur et digestifs au cabinet.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/se-ressourcer-grace-aux-rituels-saisonniers-en-normandie.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80" alt="Se ressourcer grâce aux rituels saisonniers en Normandie" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Se ressourcer grâce aux rituels saisonniers en Normandie</h2>
+                                <p>Vivre au rythme des saisons, c'est respecter les besoins de son corps. Le cabinet Amélie Naturessence adapte chaque protocole à la saison pour un accompagnement en harmonie avec la nature normande.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/yoga-et-naturopathie-une-alliance-puissante.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=800&auto=format&fit=crop&q=80" alt="Yoga et naturopathie : une alliance puissante" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Yoga et naturopathie : une alliance puissante</h2>
+                                <p>Le yoga stimule le système parasympathique et renforce l'immunité. Amélie Naturessence recommande souvent le yoga en complément de ses accompagnements naturopathiques à Bertreville Saint Ouen.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/les-omega-3-pourquoi-ils-sont-si-importants.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&auto=format&fit=crop&q=80" alt="Les oméga-3 : pourquoi ils sont si importants" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Les oméga-3 : pourquoi ils sont si importants</h2>
+                                <p>Anti-inflammatoires et essentiels au cerveau, les oméga-3 sont cruciaux. Les poissons de la côte normande (sardines, maquereaux) sont recommandés par Amélie Naturessence dans ses programmes nutritionnels.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/retention-d-eau-comprendre-et-agir.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1574447585363-4c1e037060bb?w=800&auto=format&fit=crop&q=80" alt="Rétention d'eau : comprendre et agir" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Rétention d'eau : comprendre et agir</h2>
+                                <p>Alimentation trop salée, sédentarité, déséquilibre hormonal : les causes de la rétention d'eau sont multiples. Le drainage lymphatique pratiqué par Amélie Naturessence apporte un soulagement rapide et durable.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/aromatherapie-comment-utiliser-les-huiles-sans-risque.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1591084728795-1149f32d9866?w=800&auto=format&fit=crop&q=80" alt="Aromathérapie : comment utiliser les huiles sans risque" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Aromathérapie : comment utiliser les huiles sans risque</h2>
+                                <p>Diffusion, application cutanée, voie orale : chaque mode a ses règles. Amélie, naturopathe qualifiée près de Dieppe, guide ses clients dans l'utilisation sécurisée des huiles essentielles.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/le-jeune-intermittent-bienfaits-et-precautions.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&auto=format&fit=crop&q=80" alt="Le jeûne intermittent : bienfaits et précautions" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Le jeûne intermittent : bienfaits et précautions</h2>
+                                <p>Le jeûne 16/8 permet au corps de se régénérer grâce à l'autophagie. Amélie Naturessence accompagne ses clients dans cette démarche lors des consultations de rééquilibrage alimentaire.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/proteger-sa-peau-naturellement-en-hiver-normand.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80" alt="Protéger sa peau naturellement en hiver normand" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Protéger sa peau naturellement en hiver normand</h2>
+                                <p>Froid, vent marin, chauffage : la peau souffre en hiver en Normandie. Amélie Naturessence conseille huiles végétales, hydratation interne et vitamine E pour traverser la saison.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/la-meditation-pour-les-debutants-par-ou-commencer.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800&auto=format&fit=crop&q=80" alt="La méditation pour les débutants : par où commencer" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>La méditation pour les débutants : par où commencer</h2>
+                                <p>5 minutes par jour suffisent pour débuter. Amélie intègre des techniques de méditation simples dans ses accompagnements santé au cabinet de Bertreville Saint Ouen pour une approche holistique.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/petit-dejeuner-ideal-selon-la-naturopathie.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&auto=format&fit=crop&q=80" alt="Petit-déjeuner idéal selon la naturopathie" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Petit-déjeuner idéal selon la naturopathie</h2>
+                                <p>Protéines, bons gras et fruits frais : le petit-déjeuner naturo stabilise l'énergie sans coup de barre. C'est l'un des conseils phares qu'Amélie Naturessence partage dès la première consultation.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/cellulite-et-retention-d-eau-l-approche-naturo.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=800&auto=format&fit=crop&q=80" alt="Cellulite et rétention d'eau : l'approche naturo" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Cellulite et rétention d'eau : l'approche naturo</h2>
+                                <p>La cellulite n'est pas qu'une question esthétique. Chez Amélie Naturessence à Bertreville, le drainage lymphatique combiné à une alimentation ciblée offre une approche globale pour des résultats durables.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/le-pouvoir-anti-stress-du-magnesium.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=80" alt="Le pouvoir anti-stress du magnésium" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Le pouvoir anti-stress du magnésium</h2>
+                                <p>Le magnésium est impliqué dans plus de 300 réactions enzymatiques. Amélie, naturopathe en Normandie, vérifie systématiquement le statut en magnésium lors de ses bilans de vitalité au cabinet.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/cure-d-automne-renforcer-son-immunite-en-normandie.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&auto=format&fit=crop&q=80" alt="Cure d'automne : renforcer son immunité en Normandie" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Cure d'automne : renforcer son immunité en Normandie</h2>
+                                <p>Propolis, échinacée, vitamine C et zinc : Amélie Naturessence propose des cures immunitaires d'automne personnalisées à son cabinet de naturopathie à Bertreville Saint Ouen, près de Dieppe.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/gerer-l-anxiete-naturellement-7-techniques.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=800&auto=format&fit=crop&q=80" alt="Gérer l'anxiété naturellement : 7 techniques" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Gérer l'anxiété naturellement : 7 techniques</h2>
+                                <p>Cohérence cardiaque, plantes anxiolytiques, magnésium, exercice et méditation. L'accompagnement santé sur-mesure d'Amélie Naturessence à Bertreville combine ces techniques pour une prise en charge globale de l'anxiété.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/les-graines-germees-un-concentre-de-vitalite.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&auto=format&fit=crop&q=80" alt="Les graines germées : un concentré de vitalité" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Les graines germées : un concentré de vitalité</h2>
+                                <p>Faire germer des graines multiplie leur teneur en vitamines jusqu'à 600%. Amélie Naturessence intègre ces super-aliments vivants dans les programmes de rééquilibrage alimentaire proposés au cabinet.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/jambes-lourdes-les-solutions-naturelles.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&auto=format&fit=crop&q=80" alt="Jambes lourdes : les solutions naturelles" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Jambes lourdes : les solutions naturelles</h2>
+                                <p>Vigne rouge, hamamélis et drainage lymphatique : les approches naturelles pour retrouver des jambes légères. Au cabinet Amélie Naturessence près de Dieppe, le drainage est la solution la plus demandée pour ce problème.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/les-bienfaits-de-la-marche-pieds-nus-sur-les-plages-normandes.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?w=800&auto=format&fit=crop&q=80" alt="Les bienfaits de la marche pieds nus sur les plages normandes" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Les bienfaits de la marche pieds nus sur les plages normandes</h2>
+                                <p>Marcher pieds nus sur le sable de Pourville ou Dieppe permet de se reconnecter à la terre. Amélie Naturessence encourage le grounding comme pratique anti-stress complémentaire à ses accompagnements.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/huiles-essentielles-les-5-indispensables-a-avoir-chez-soi.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=800&auto=format&fit=crop&q=80" alt="Huiles essentielles : les 5 indispensables à avoir chez soi" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Huiles essentielles : les 5 indispensables à avoir chez soi</h2>
+                                <p>Lavande vraie, tea tree, ravintsara, menthe poivrée et eucalyptus radié. Amélie, naturopathe en Seine-Maritime, conseille ces huiles lors de ses consultations pour constituer une trousse aromatique familiale.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/l-intestin-notre-deuxieme-cerveau.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80" alt="L'intestin, notre deuxième cerveau" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>L'intestin, notre deuxième cerveau</h2>
+                                <p>95% de la sérotonine est produite dans l'intestin. L'approche naturopathique d'Amélie Naturessence accorde une place centrale à la santé intestinale dans chaque bilan de vitalité.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/detox-de-printemps-nettoyez-votre-foie-naturellement.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&auto=format&fit=crop&q=80" alt="Détox de printemps : nettoyez votre foie naturellement" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Détox de printemps : nettoyez votre foie naturellement</h2>
+                                <p>Le printemps est la saison du foie. Artichaut, radis noir et romarin : Amélie Naturessence propose des cures détox printanières personnalisées à son cabinet de Bertreville Saint Ouen en Normandie.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/le-bain-de-foret-la-sylvotherapie-en-normandie.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80" alt="Le bain de forêt : la sylvothérapie en Normandie" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Le bain de forêt : la sylvothérapie en Normandie</h2>
+                                <p>Le shinrin-yoku réduit le cortisol de 16% en moyenne. Les forêts normandes autour de Dieppe et Bertreville sont idéales pour cette pratique qu'Amélie Naturessence recommande en complément de ses accompagnements.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/micronutrition-les-carences-les-plus-frequentes.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=800&auto=format&fit=crop&q=80" alt="Micronutrition : les carences les plus fréquentes" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Micronutrition : les carences les plus fréquentes</h2>
+                                <p>Magnésium, vitamine D, zinc, fer et oméga-3 : les carences les plus courantes en France. Amélie Naturessence les identifie lors du bilan de vitalité et propose des solutions alimentaires naturelles adaptées.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/drainage-lymphatique-du-visage-l-eclat-naturel.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1591343395902-1adcb454c4e2?w=800&auto=format&fit=crop&q=80" alt="Drainage lymphatique du visage : l'éclat naturel" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Drainage lymphatique du visage : l'éclat naturel</h2>
+                                <p>Le drainage lymphatique facial réduit les poches, affine le visage et donne un teint lumineux. Amélie Naturessence propose cette technique au cabinet près de Dieppe pour un éclat naturel sans produits chimiques.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/tisane-du-soir-les-meilleures-plantes-pour-bien-dormir.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1466853817435-05b43fe3aec2?w=800&auto=format&fit=crop&q=80" alt="Tisane du soir : les meilleures plantes pour bien dormir" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>Tisane du soir : les meilleures plantes pour bien dormir</h2>
+                                <p>Camomille, passiflore, valériane et mélisse : préparez votre tisane idéale. Amélie, naturopathe à Bertreville Saint Ouen, recommande ces plantes en accompagnement des consultations pour améliorer la qualité du sommeil.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/le-pouvoir-du-sommeil-sur-la-regeneration-cellulaire.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&auto=format&fit=crop&q=80" alt="Le pouvoir du sommeil sur la régénération cellulaire" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Le pouvoir du sommeil sur la régénération cellulaire</h2>
+                                <p>Entre 22h et 2h du matin, le corps produit l'hormone de croissance qui répare les tissus. Lors des bilans de vitalité chez Amélie Naturessence, le sommeil est toujours évalué en priorité.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/les-super-aliments-locaux-qu-on-oublie-en-normandie.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&auto=format&fit=crop&q=80" alt="Les super-aliments locaux qu'on oublie en Normandie" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Les super-aliments locaux qu'on oublie en Normandie</h2>
+                                <p>Pas besoin d'aller chercher des baies de goji au bout du monde. Ortie, pissenlit, myrtilles et noix : la Normandie regorge de super-aliments. Amélie Naturessence privilégie toujours les ressources locales dans ses conseils nutritionnels.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="saisonnier">
+                        <a href="blog/preparer-son-corps-au-changement-de-saison.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=800&auto=format&fit=crop&q=80" alt="Préparer son corps au changement de saison" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Conseils Saisonniers</span>
+                                <h2>Préparer son corps au changement de saison</h2>
+                                <p>À chaque changement de saison, notre organisme a besoin d'un coup de pouce. Au cabinet Amélie Naturessence en Normandie, des cures saisonnières personnalisées sont proposées pour traverser ces transitions en douceur.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="stress">
+                        <a href="blog/respiration-et-coherence-cardiaque-5-minutes-qui-changent-tout.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=80" alt="Respiration et cohérence cardiaque : 5 minutes qui changent tout" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Gestion du Stress</span>
+                                <h2>Respiration et cohérence cardiaque : 5 minutes qui changent tout</h2>
+                                <p>La cohérence cardiaque régule le cortisol et calme le système nerveux. Amélie enseigne cette technique lors de ses consultations de naturopathie à Bertreville Saint Ouen, près de Dieppe, pour accompagner la gestion du stress.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/l-alimentation-anti-inflammatoire-au-quotidien.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80" alt="L'alimentation anti-inflammatoire au quotidien" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>L'alimentation anti-inflammatoire au quotidien</h2>
+                                <p>Curcuma, oméga-3, fruits rouges, légumes verts... Adopter une alimentation anti-inflammatoire réduit les douleurs chroniques. C'est l'un des axes majeurs du rééquilibrage alimentaire proposé par Amélie Naturessence.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="plantes">
+                        <a href="blog/5-plantes-adaptogenes-pour-gerer-le-stress.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&auto=format&fit=crop&q=80" alt="5 plantes adaptogènes pour gérer le stress" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Plantes & Phyto</span>
+                                <h2>5 plantes adaptogènes pour gérer le stress</h2>
+                                <p>Ashwagandha, rhodiola, ginseng, basilic sacré et éleuthérocoque : ces plantes aident votre corps à s'adapter au stress. Amélie, naturopathe en Normandie, les intègre régulièrement dans ses protocoles personnalisés.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="drainage">
+                        <a href="blog/le-drainage-lymphatique-pourquoi-c-est-essentiel.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&auto=format&fit=crop&q=80" alt="Le drainage lymphatique : pourquoi c'est essentiel" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Drainage Lymphatique</span>
+                                <h2>Le drainage lymphatique : pourquoi c'est essentiel</h2>
+                                <p>Le système lymphatique est notre système de nettoyage interne. Amélie Naturessence propose des séances de drainage lymphatique manuel à son cabinet près de Dieppe pour éliminer les toxines, réduire la rétention d'eau et renforcer les défenses immunitaires.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-card fade-in-section visible" data-category="alimentation">
+                        <a href="blog/les-bienfaits-du-citron-tiede-le-matin.html" style="text-decoration:none;color:inherit;display:block;">
+                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&auto=format&fit=crop&q=80" alt="Les bienfaits du citron tiède le matin" class="blog-card-img" loading="lazy">
+                            <div class="blog-card-body">
+                                <span class="blog-card-category">Alimentation</span>
+                                <h2>Les bienfaits du citron tiède le matin</h2>
+                                <p>Commencer la journée avec un verre d'eau tiède citronnée stimule la digestion et booste l'immunité. Au cabinet Amélie Naturessence à Bertreville Saint Ouen, ce geste simple est l'un des premiers conseils donnés lors du bilan de vitalité.</p>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Amélie Naturessence. Tous droits réservés.</p>
+            <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 1rem;">
+                Naturopathe Normandie &bull; Blog bien-être &bull; Bertreville Saint Ouen &bull; Dieppe &bull; Seine-Maritime
+            </p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Filters
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.blog-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('open');
+                hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+                document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('open');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    });
+    </script>
+</body>
