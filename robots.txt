@@ -10,4 +10,4 @@ User-agent: Bingbot
 Allow: /
 Crawl-delay: 2
 
-Sitemap: https://xn--naturessence-amlie-pwb.com/sitemap.xml
+Sitemap: https://naturessence-amelie.com/sitemap.xml
