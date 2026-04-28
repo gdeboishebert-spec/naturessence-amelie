@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Amélie Naturessence site loaded.');
-
     // Scroll Animation Observer
     const observerOptions = {
         threshold: 0.1

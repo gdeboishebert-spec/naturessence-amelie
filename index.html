@@ -21,9 +21,11 @@
 
     <!-- Preload ressources critiques -->
     <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="assets/images/hero_pourville.webp" as="image">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preload" href="assets/images/hero_pourville.webp" as="image" fetchpriority="high">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://calendar.google.com">
+    <link rel="dns-prefetch" href="https://calendar.googleusercontent.com">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon.png">
@@ -220,12 +222,9 @@
     }
     </script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=League+Script&display=swap"
-        rel="stylesheet">
+    <!-- Fonts async (non-bloquant) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=League+Script&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=League+Script&display=swap"></noscript>
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -538,7 +537,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
