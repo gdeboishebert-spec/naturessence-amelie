@@ -1,13 +1,13 @@
 {
   "rating": 5.0,
   "total": 1,
-  "gmb_url": "https://search.google.com/local/reviews?placeid=TON_PLACE_ID_ICI",
+  "gmb_url": "https://www.google.com/maps/place/Naturessence+Am%C3%A9lie/@49.853,1.050",
   "reviews": [
     {
-      "name": "Ton vrai nom ici",
-      "date": "il y a 2 semaines",
+      "name": "Jules Espy",
+      "date": "il y a 4 heures",
       "rating": 5,
-      "text": "Colle ici le texte exact de ton vrai avis Google."
+      "text": "Un grand merci à Amélie ! Consultation très complète, écoute attentive et conseils personnalisés que j'applique au quotidien. Je sens déjà une vraie différence dans mon énergie et mon bien-être au quotidien."
     }
   ]
 }
