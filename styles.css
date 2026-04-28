@@ -731,8 +731,9 @@ footer {
 
 /* --- Reviews Section --- */
 .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -741,11 +742,11 @@ footer {
     background: white;
     padding: 2rem;
     border-radius: 8px;
-    /* Slightly rounded like Google cards */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid #f1f1f1;
     text-align: left;
     transition: transform 0.3s ease;
+    flex: 0 1 340px;
 }
 
 .review-card:hover {
@@ -814,7 +815,12 @@ footer {
 
 @media (max-width: 768px) {
     .reviews-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
+    }
+    .review-card {
+        flex: 0 1 100%;
+        max-width: 420px;
     }
 }
 
