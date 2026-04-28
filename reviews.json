@@ -1,0 +1,13 @@
+{
+  "rating": 5.0,
+  "total": 1,
+  "gmb_url": "https://search.google.com/local/reviews?placeid=TON_PLACE_ID_ICI",
+  "reviews": [
+    {
+      "name": "Ton vrai nom ici",
+      "date": "il y a 2 semaines",
+      "rating": 5,
+      "text": "Colle ici le texte exact de ton vrai avis Google."
+    }
+  ]
+}
