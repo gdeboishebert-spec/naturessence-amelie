@@ -844,3 +844,286 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ================================================== */
+/* MOBILE OPTIMIZATION — clean, aligned, no overflow  */
+/* ================================================== */
+@media (max-width: 768px) {
+    /* Stop horizontal scroll once and for all */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+        width: 100%;
+    }
+
+    img, iframe, video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Container reset */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1.25rem;
+    }
+
+    /* Word wrapping for long uppercase headings */
+    h1, h2, h3, h4 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Section spacing — was 10rem (160px), way too much on mobile */
+    .section-padding {
+        padding: 4rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem !important;
+        letter-spacing: 1px !important;
+        line-height: 1.4;
+    }
+
+    .script-font {
+        font-size: 1.8rem !important;
+        line-height: 1.2;
+    }
+
+    /* Header */
+    header {
+        padding: 1rem 0;
+    }
+
+    .logo {
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+    }
+
+    /* Hero — override inline styles with !important */
+    #hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 5rem 0 3rem;
+    }
+
+    .hero-content {
+        padding: 2rem 1.5rem !important;
+        margin: 0 1rem;
+        max-width: calc(100% - 2rem);
+    }
+
+    .hero-content h1.hero-title {
+        font-size: 1.4rem !important;
+        letter-spacing: 1px !important;
+        line-height: 1.4;
+    }
+
+    .hero-content h2.hero-title {
+        font-size: 0.9rem !important;
+        margin-top: 1.5rem !important;
+        letter-spacing: 0.5px !important;
+        line-height: 1.5;
+    }
+
+    .hero-subtitle {
+        font-size: 1.7rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem !important;
+        line-height: 1.5;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.85rem 1.8rem;
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        white-space: nowrap;
+    }
+
+    .btn-outline {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    /* About */
+    .about-content {
+        gap: 2rem;
+    }
+
+    .about-text {
+        text-align: left;
+    }
+
+    .about-image img {
+        max-width: 120px !important;
+    }
+
+    /* Services — keep stacked, tighter spacing */
+    .services-grid {
+        gap: 3rem;
+        padding-top: 1rem;
+        margin-top: 1rem;
+    }
+
+    .service-card h3 {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .service-img-wrapper {
+        height: 220px;
+    }
+
+    /* Pricing */
+    .pricing-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .pricing-card h3 {
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+    }
+
+    .pricing-card .price {
+        font-size: 2rem;
+    }
+
+    .features li {
+        font-size: 0.9rem;
+    }
+
+    /* Reviews */
+    .reviews-grid {
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .review-card {
+        padding: 1.5rem;
+    }
+
+    /* FAQ — fixes inline max-width:800px container */
+    #faq .container {
+        max-width: 100% !important;
+    }
+
+    .faq-q {
+        font-size: 0.85rem !important;
+        padding: 1.2rem 0 !important;
+        gap: 0.75rem !important;
+        line-height: 1.5;
+    }
+
+    .faq-a {
+        font-size: 0.9rem !important;
+        line-height: 1.7;
+    }
+
+    /* Contact */
+    #contact div[style*="font-size"] {
+        font-size: 0.95rem !important;
+    }
+
+    #contact p {
+        margin-bottom: 0.5rem;
+        word-wrap: break-word;
+        line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2.5rem 0;
+        font-size: 0.75rem;
+    }
+
+    footer p {
+        word-wrap: break-word;
+        line-height: 1.6;
+    }
+
+    /* Modal — kill negative margins that cause overflow */
+    .modal-body iframe {
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        filter: none !important;
+    }
+
+    /* Final CTA */
+    #final-cta {
+        padding: 2.5rem 0 !important;
+    }
+
+    #final-cta .btn {
+        padding: 0.9rem 2rem !important;
+        font-size: 0.9rem !important;
+        white-space: nowrap;
+    }
+}
+
+/* ================================================== */
+/* VERY SMALL SCREENS — iPhone SE and below          */
+/* ================================================== */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem 1rem !important;
+        margin: 0 0.5rem;
+        max-width: calc(100% - 1rem);
+    }
+
+    .hero-content h1.hero-title {
+        font-size: 1.2rem !important;
+    }
+
+    .hero-content h2.hero-title {
+        font-size: 0.8rem !important;
+        margin-top: 1.2rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem !important;
+    }
+
+    .section-header h2 {
+        font-size: 1.2rem !important;
+    }
+
+    .script-font {
+        font-size: 1.5rem !important;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .pricing-card .price {
+        font-size: 1.7rem;
+    }
+
+    .service-card h3 {
+        font-size: 0.95rem;
+    }
+}
