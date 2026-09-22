@@ -108,7 +108,7 @@ header {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 3rem;
+    gap: 1.75rem;
 }
 
 .nav-links a {
@@ -116,6 +116,7 @@ header {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 400;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
