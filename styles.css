@@ -588,7 +588,7 @@ footer {
 
 @media (max-width: 768px) {
     .pricing-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 
     .grid-2col,
